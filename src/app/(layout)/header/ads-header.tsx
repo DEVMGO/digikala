@@ -5,7 +5,7 @@ const AdsHeader = () => {
     return (
         <div className='w-full h-[3.75rem] bg-gray-200'>
             <Image
-                src='/images/layout/baner.jpg'
+                src='/images/layout/banner.gif'
                 width={1540}
                 height={60}
                 alt='baner-header'
