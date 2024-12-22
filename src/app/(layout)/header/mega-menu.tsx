@@ -36,7 +36,7 @@ const MegaMenu: FC<Props> = ({ isHovered, handleMouseEnter, handleMouseLeave }) 
     return (
         <div
             className={`w-full flex items-center justify-between px-4 transition-all duration-200 ease-linear
-            transform ${isVisible ? 'h-10 translate-y-0' : 'h-0 -translate-y-10'} z-10 relative`}
+            transform ${isVisible ? 'h-10 translate-y-0' : 'h-0 -translate-y-10'} z-10`}
         >
             <MegaMenuList {...{ isHovered, handleMouseEnter, handleMouseLeave }} />
             <div className='h-full flex items-center'>
