@@ -5,6 +5,7 @@ import { IoSearch } from "react-icons/io5";
 import { TbLogin } from "react-icons/tb";
 import ShoppingCardIcon from '@/app/_assets/icons/shopping-card-icon';
 import ButtonGroup from './button-group';
+import ShoppingCard from './shopping-card';
 
 const Navigation = () => {
     const isLogin = true;
@@ -44,9 +45,12 @@ const Navigation = () => {
                     </button>
                 }
                 <hr className='h-6 border-l border-[#e0e0e2]' />
-                <Link href="/" className='p-2'>
-                    <ShoppingCardIcon />
-                </Link>
+                <div className='relative'>
+                    <Link href="/" className='p-2'>
+                        <ShoppingCardIcon />
+                    </Link>
+                    <ShoppingCard />
+                </div>
             </div>
         </div>
     )

@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import AdsHeader from './ads-header'
-import Navigation from './navigation'
-import MegaMenu from './mega-menu'
+import Navigation from './navigation/navigation'
+import MegaMenu from './mega-menu/mega-menu'
 
 const Header = () => {
     const [isHovered, setIsHovered] = useState(false);
