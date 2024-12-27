@@ -4,7 +4,7 @@ import Link from 'next/link'
 // import { LiaLaptopSolid, LiaPencilRulerSolid } from "react-icons/lia";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { MockMegaMenu } from '@/app/_data/mega-menu-data';
-import { CategoryType } from './types';
+import { CategoryType } from '../types';
 
 interface Props {
     isHovered: boolean
