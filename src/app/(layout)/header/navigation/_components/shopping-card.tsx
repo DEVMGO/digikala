@@ -1,8 +1,21 @@
-import Image from 'next/image'
-import Link from 'next/link'
+'use client'
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { RiAddFill } from "react-icons/ri";
+// import { HiMiniMinus } from "react-icons/hi2";
+import { HiOutlineTrash } from "react-icons/hi2";
+import { useCountdownTimer } from '@/app/_utils/useCountdownTimer';
 
 const ShoppingCard = () => {
+    const isValid = true;
+    const startDate = new Date(
+        new Date().toLocaleDateString("en-US", { timeZone: "Asia/Tehran" }) + " 16:51"
+    ).getTime();
+
+    const { timer, countdownTimer } = useCountdownTimer(isValid, 60, startDate);
+
+
     return (
         <div
             className='absolute top-full left-0 min-w-[25rem] bg-white flex items-start justify-start flex-col 
@@ -24,12 +37,21 @@ const ShoppingCard = () => {
                             />
                         </div>
                         <div className='w-full flex items-center justify-end flex-col gap-3'>
-                            <div className='w-[6.5rem] h-11 flex items-center justify-between border border-gray-300 rounded-lg'>
-                                <button className=''></button>
-                                <div className='flex items-center justify-center flex-col gap-1'>
+                            <div className=''>
+                                <p className='text-sm text-[#ef4056]'>{(isValid && timer > 0) && countdownTimer(timer)}</p>
+                            </div>
+                            <div className='w-[6.5rem] h-11 flex items-center justify-between border border-gray-300 rounded-lg px-2'>
+                                <button className=''>
+                                    <RiAddFill className='text-lg text-[#ef4056]' />
+                                </button>
+                                <div className='flex items-center justify-center flex-col'>
                                     <p className='text-sm text-[#ef4056]'>۲</p>
+                                    <p className='text-xs text-[#858a93c0] font-semibold'>حداکثر</p>
                                 </div>
-                                <button className=''></button>
+                                <button className=''>
+                                    {/* <HiMiniMinus className='text-lg text-[#ef4056]' /> */}
+                                    <HiOutlineTrash className='text-lg text-[#ef4056]' />
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -51,7 +73,7 @@ const ShoppingCard = () => {
                                 <p className='text-xs text-[#62666d] truncate'>ارسال امروز (فعلا در شهر تهران و کرج)</p>
                             </div>
                         </div>
-                        <div className='flex items-start justify-center flex-col gap-4'>
+                        <div className='flex items-start justify-center flex-col gap-2'>
                             <div className='flex items-center gap-1'>
                                 <p className='text-xs text-[#ef4056] font-bold'>۲۵۵,۵۰۰</p>
                                 <p className='text-[10px] text-[#ef4056] font-bold'>تومان</p>

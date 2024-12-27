@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./(layout)/header/header";
+import "react-toastify/dist/ReactToastify.css";
+import { Slide, ToastContainer } from "react-toastify";
+import ReactQueryProvider from "./global/react-query-provider";
 
 const iranYekan = localFont({
   src: [
@@ -77,8 +80,24 @@ export default function RootLayout({
         dir="rtl"
         className={`w-full ${iranYekan.className}`}
       >
-        <Header />
-        {children}
+        <ToastContainer
+          style={{ width: "100%" }}
+          position="top-center"
+          theme="light"
+          hideProgressBar
+          autoClose={2000}
+          newestOnTop={true}
+          closeOnClick
+          rtl={true}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          transition={Slide}
+        />
+        <ReactQueryProvider>
+          <Header />
+          {children}
+        </ReactQueryProvider>
       </body>
     </html>
   );
