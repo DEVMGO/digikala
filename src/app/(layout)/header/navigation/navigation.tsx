@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -16,7 +16,8 @@ const ShoppingCard = dynamic(() => import("./_components/shopping-card"), {
 const Navigation = () => {
     const isLogin = true;
     const { data } = useGetHeaderData();
-    console.log("data => ", data)
+    // console.log("data => ", data)
+    const [isOpenCard, setIsOpenCard] = useState<boolean>(false);
     return (
         <div className='w-full min-h-[4.25rem] bg-white flex items-center justify-between py-3 md:px-4 z-20'>
             <div className='w-full flex items-center gap-5'>
@@ -53,11 +54,18 @@ const Navigation = () => {
                     </button>
                 }
                 <hr className='h-6 border-l border-[#e0e0e2]' />
-                <div className='relative max-h-11 px-2'>
-                    <Link href="/" className='max-h-11 flex items-center justify-center'>
+                <div
+                    className='relative max-h-11 px-2'
+                    onMouseEnter={() => setIsOpenCard(true)}
+                    onMouseLeave={() => setIsOpenCard(false)}
+                >
+                    <Link
+                        href="/"
+                        className='max-h-11 flex items-center justify-center'
+                    >
                         <ShoppingCardIcon />
                     </Link>
-                    <ShoppingCard />
+                    {isOpenCard && <ShoppingCard data={data?.data?.cart} />}
                 </div>
             </div>
         </div>

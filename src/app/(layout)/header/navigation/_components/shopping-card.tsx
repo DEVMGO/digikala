@@ -6,8 +6,12 @@ import { RiAddFill } from "react-icons/ri";
 // import { HiMiniMinus } from "react-icons/hi2";
 import { HiOutlineTrash } from "react-icons/hi2";
 import { useCountdownTimer } from '@/app/_utils/useCountdownTimer';
+import { Cart } from '../_api/types';
 
-const ShoppingCard = () => {
+interface Props {
+    data?: Cart
+}
+const ShoppingCard = (props: Props) => {
     const isValid = true;
     const startDate = new Date(
         new Date().toLocaleDateString("en-US", { timeZone: "Asia/Tehran" }) + " 16:51"
@@ -15,14 +19,14 @@ const ShoppingCard = () => {
 
     const { timer, countdownTimer } = useCountdownTimer(isValid, 60, startDate);
 
-
+    // if (!props.data) return <p>Loading...</p>
     return (
         <div
             className='absolute top-full left-0 min-w-[25rem] bg-white flex items-start justify-start flex-col 
             rounded-lg overflow-hidden shadow-[0_1px_1px_rgba(0,0,0,.14),0_4px_8px_rgba(0,0,0,.3)]'
         >
             <div className='py-2 px-3'>
-                <p className='text-xs text-[#62666d]'>2 کالا</p>
+                <p className='text-xs text-[#62666d]'>{props?.data?.itemsCount} کالا</p>
             </div>
             <div className='w-full flex items-start justify-start flex-col px-3 pb-4'>
                 <div className='w-full flex items-start justify-start border-b border-gray-200 gap-5 py-3'>
