@@ -25,7 +25,7 @@ const FullSlider = ({ data }: {
                 className="w-full relative"
             >
                 {!!data && data?.data?.map((item, index) => (
-                    <SwiperSlide key={index} className="w-full h-full mt-2">
+                    <SwiperSlide key={index} className="w-full h-full">
                         <Image
                             width={1936}
                             height={400}

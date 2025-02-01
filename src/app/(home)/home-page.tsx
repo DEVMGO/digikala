@@ -7,7 +7,7 @@ const HomePage = () => {
     const { data } = useGetWidgetsData();
     const fullSlider = data?.data.widgets.find(item => item?.type === "full_slider");
     return (
-        <main className="w-full max-w flex items-center justify-start flex-col">
+        <main className="w-full min-h-[130dvh] flex items-center justify-start flex-col">
             {fullSlider && <FullSlider data={fullSlider} />}
         </main>
     )

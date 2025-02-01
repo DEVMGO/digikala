@@ -21,7 +21,7 @@ const Header = () => {
     return (
         <header
             className={`sticky top-0 right-0 w-full flex items-center justify-start flex-col
-            shadow-[0_1px_0_rgba(0,0,0,.14),0_2px_0_rgba(0,0,0,.05)] bg-white`}
+            shadow-[0_1px_0_rgba(0,0,0,.14),0_2px_0_rgba(0,0,0,.05)] bg-white z-20`}
         // shadow-[0_1px_0_rgba(0,0,0,.14),0_2px_0_rgba(0,0,0,.05)] bg-white ${isHovered ? 'pr-2' : 'pr-0'}`}
         >
             <AdsHeader />
