@@ -5,6 +5,7 @@ import Header from "./(layout)/header/header";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide, ToastContainer } from "react-toastify";
 import ReactQueryProvider from "./global/react-query-provider";
+import 'swiper/css';
 
 const iranYekan = localFont({
   src: [

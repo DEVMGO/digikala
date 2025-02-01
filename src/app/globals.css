@@ -361,3 +361,34 @@ body {
   border-radius: 0;
   background: #c0c2c5;
 }
+
+.swiper-pagination-bullet {
+  width: 4px !important;
+  height: 4px !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 16px !important;
+  height: 6px !important;
+  border-radius: 99999px !important;
+  background: #fff !important;
+  transform: translateX(2px) !important;
+}
+
+.swiper-button-prev::after {
+  position: absolute !important;
+  right: 50px !important;
+  bottom: 50px !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.swiper-button-prev {
+  position: relative !important;
+  right: 50px !important;
+  bottom: 50px !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+.swiper-button-next {
+}
